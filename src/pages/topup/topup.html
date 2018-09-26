@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title >Top Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list class="list">
+      <ion-item *ngFor="let balance of balanceDataSet">
+        
+        <p>Your Balance: ₱ {{ balance.balance }}</p>
+      </ion-item>  
+
+          <ion-item>
+            <ion-label floating>Code</ion-label>
+            <ion-input type="text" value="" [(ngModel)]="code"></ion-input>
+          </ion-item>
+        
+          <button ion-button block   (click)="onSubmit()">Submit</button>
+          <ion-item color="seconday" *ngIf="isClicked">
+            <p> You have successfully topped up!</p>
+            
+          </ion-item>
+        </ion-list>
+
+</ion-content>

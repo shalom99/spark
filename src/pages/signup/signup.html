@@ -1,0 +1,133 @@
+<ion-content padding id="signup" text-center>
+  <h2>Sign Up</h2>
+  <ion-item>
+    <ion-label>Account Type</ion-label>
+    <ion-select [(ngModel)]="selectOption">
+      <ion-option value="rentor">Rentor</ion-option>
+      <ion-option value="tenant">Tenant</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <div *ngIf="selectOption == 'rentor'">
+
+    <p *ngIf="submitAttempt">Please fill out all details accurately.</p>
+    <form (ngSubmit)="onSignup()" [formGroup]="validateForm">
+
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" formControlName="name" [(ngModel)]="userData.name"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!validateForm.controls.name.valid  && (validateForm.controls.name.dirty || submitAttempt)">
+          <p>Please enter a valid name.</p>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="text" formControlName="email" [(ngModel)]="userData.email"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!validateForm.controls.email.valid  && (validateForm.controls.email.dirty || submitAttempt)">
+          <p>Please enter a valid email.</p>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" formControlName="username" [(ngModel)]="userData.username"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!validateForm.controls.username.valid  && (validateForm.controls.username.dirty || submitAttempt)">
+          <p>Please enter a valid username.</p>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" formControlName="password" [(ngModel)]="userData.password"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!validateForm.controls.password.valid  && (validateForm.controls.password.dirty || submitAttempt)">
+          <p>Please enter a valid password.</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Phone</ion-label>
+          <ion-input type="text" formControlName="phone_number" [(ngModel)]="userData.phone_number"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!validateForm.controls.phone_number.valid  && (validateForm.controls.phone_number.dirty || submitAttempt)">
+          <p>Please enter a valid phone number.</p>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Plate Number</ion-label>
+          <ion-input type="text" formControlName="plate_number" [(ngModel)]="userData.plate_number"></ion-input>
+        </ion-item>
+        <!-- <ion-item *ngIf="!validateForm.controls.plate_number.valid  && (validateForm.controls.plate_number.dirty || submitAttempt)">
+      <p>Please enter a valid plate number.</p>
+  </ion-item> -->
+        <ion-item text-center>
+          <h5 color="primary" (click)="showTerms()"> Terms and Conditions</h5>
+
+        </ion-item>
+        <ion-item>
+          <ion-label> I agree</ion-label>
+          <ion-checkbox color="blue" checked="false"></ion-checkbox>
+        </ion-item>
+        <button ion-button block round outline color="primary" type="submit">Signup </button>
+        <button ion-button block (click)="login()" round outline>Login </button>
+      </ion-list>
+
+    </form>
+
+  </div>
+  <div *ngIf="selectOption == 'tenant'">
+
+
+    <p *ngIf="submitAttempt">Please fill out all details accurately.</p>
+    <form (ngSubmit)="onSignup()" [formGroup]="validateForm">
+
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" formControlName="name" [(ngModel)]="userData.name"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!validateForm.controls.name.valid  && (validateForm.controls.name.dirty || submitAttempt)">
+          <p>Please enter a valid name.</p>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="text" formControlName="email" [(ngModel)]="userData.email"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!validateForm.controls.email.valid  && (validateForm.controls.email.dirty || submitAttempt)">
+          <p>Please enter a valid email.</p>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" formControlName="username" [(ngModel)]="userData.username"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!validateForm.controls.username.valid  && (validateForm.controls.username.dirty || submitAttempt)">
+          <p>Please enter a valid username.</p>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" formControlName="password" [(ngModel)]="userData.password"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!validateForm.controls.password.valid  && (validateForm.controls.password.dirty || submitAttempt)">
+          <p>Please enter a valid password.</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Phone</ion-label>
+          <ion-input type="text" formControlName="phone_number" [(ngModel)]="userData.phone_number"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!validateForm.controls.phone_number.valid  && (validateForm.controls.phone_number.dirty || submitAttempt)">
+          <p>Please enter a valid phone number.</p>
+        </ion-item>
+        <ion-item text-center>
+          <h5 color="primary" (click)="showTerms()"> Terms and Conditions</h5>
+
+        </ion-item>
+        <ion-item>
+          <ion-label> I agree</ion-label>
+          <ion-checkbox color="blue" checked="false"></ion-checkbox>
+        </ion-item>
+        <button ion-button block round outline color="primary" type="submit">Signup </button>
+        <button ion-button block (click)="login()" round outline>Login </button>
+      </ion-list>
+
+    </form>
+  </div>
+
+</ion-content>

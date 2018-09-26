@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Parking Slots</ion-title>
+    <ion-buttons end>
+      
+              <button ion-button icon-only (click)="startListening()">
+                  <ion-icon name="mic" ></ion-icon>
+                </button>
+          </ion-buttons>
+          
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  
+  <ion-grid > 
+    <div *ngIf="slotsSet">
+    <ion-row *ngFor="let slot of slotsSet">
+      <ion-col>
+          <button ion-button block outline *ngIf="slot.columnId == 'A'" class="rowz" (click)="gotoReservation(slot)">{{slot.columnId}}{{slot.rowId}} </button>
+      </ion-col>
+       <ion-col >
+          <button ion-button block outline *ngIf="slot.columnId == 'B'" class="row2" (click)="gotoReservation(slot)">{{slot.columnId}}{{slot.rowId}}  </button>
+      </ion-col>
+      <ion-col  >
+          <button ion-button block outline *ngIf="slot.columnId == 'C'" class="row3" (click)="gotoReservation(slot)">{{slot.columnId}}{{slot.rowId}}</button>
+      </ion-col>
+      <ion-col >
+          <button ion-button  block  outline *ngIf="slot.columnId == 'D'" class="row4" (click)="gotoReservation(slot)">{{slot.columnId}}{{slot.rowId}} </button>
+      </ion-col> 
+    </ion-row>
+  </div>
+  </ion-grid>
+  <ion-list>
+
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,40 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    
+    <ion-title> Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list no-lines>
+    <ion-item >
+      Username: {{ userDetails.username}}
+    </ion-item>
+    <ion-item>
+        Email: {{userDetails.email}}
+    </ion-item>
+    <ion-item>
+        Name: {{userDetails.name}}
+    </ion-item>
+    <ion-item>
+        Phone: {{userDetails.phone_number}}
+ 
+    </ion-item>
+    <ion-item>
+        Plate Number: {{userDetails.plate_number}} 
+       
+    </ion-item>
+
+    <ion-item *ngFor="let balance of balanceDataSet">
+     Balance: 	₱{{ balance.balance  }}
+     
+  </ion-item>
+  </ion-list>
+  
+
+</ion-content>

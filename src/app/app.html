@@ -1,1 +1,38 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<!-- <ion-nav [root]="rootPage"></ion-nav> -->
+
+<ion-split-pane [when]="splitPane.getSplitPane()">
+    <ion-menu [content]="content">
+        <ion-header>
+            <ion-toolbar class="menuheader" color="primary">
+                <ion-title class="headertitle">DASHBOARD</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list no-lines>
+                <ion-item  (click)="onLoadProfile()">
+                    <ion-icon name="person" item-left icon-only></ion-icon>
+                    Profile
+                </ion-item>
+                <ion-item (click)="onLoadReservations()">
+                    <ion-icon name="book" item-left icon-only></ion-icon>
+                    Reservations
+                </ion-item>
+                <ion-item (click)="onLoadNotifications()">
+                    <ion-icon name="mail" item-left icon-only></ion-icon>
+                    Notifications
+                </ion-item>
+                <ion-item  (click)="onLoadTopUp()">
+                    <ion-icon name="card" item-left icon-only></ion-icon>
+                    Top Up
+                </ion-item>
+                <ion-item (click)="onSignout()">
+                    <ion-icon name="log-out" item-left icon-only></ion-icon>
+                    Sign-out
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+
+
+    <ion-nav [root]="rootPage" main #content></ion-nav>
+</ion-split-pane>

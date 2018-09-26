@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title >Reservation - {{userPostData.columnId}}{{userPostData.rowId}} </ion-title>
+    <ion-buttons end>
+      
+              <button ion-button icon-only (click)="startListening()">
+                  <ion-icon name="mic" ></ion-icon>
+                </button>
+          </ion-buttons>
+          
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ 
+  <ion-list *ngFor="let item of resdataSet; let i = index">
+    
+    <ion-item *ngIf="item.user_id_fk > 0; else banana" color="danger">
+      <ion-label > {{ item.Start}} - {{item.End}} Status: Not Available</ion-label>
+      <ion-checkbox color="green" disabled="true"></ion-checkbox>
+    </ion-item>
+    <ng-template #banana>
+      <ion-item color="secondary">
+      <ion-label > {{ item.Start}} - {{item.End}} Status: {{item.user_id_fk}}</ion-label>
+      <ion-checkbox color="green" checked="false" class="banana" (ionChange)="onChecked(item.id, $event)"></ion-checkbox>
+    </ion-item>
+    </ng-template>
+    
+  </ion-list>
+
+  <button [disabled]="buttonState()" ion-button block (click)="onReserve()"> Reserve!</button>
+
+
+
+
+</ion-content>

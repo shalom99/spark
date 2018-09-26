@@ -1,17 +1,24 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar [color]="isRecording ? 'danger' : 'primary'">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
     <ion-title>Home</ion-title>
+    <ion-buttons end>
+
+        <button ion-button icon-only (click)="startListening()">
+            <ion-icon name="mic" ></ion-icon>
+          </button>
+          <!-- <button ion-button (click)="gotoVoice()"> V.Test</button> -->
+          <!-- <button ion-button (click)="gotoSlot()"> Reserve</button> -->
+          <!-- <button ion-button (click)="stopListening()" *ngIf="isIos()" >Stop</button> -->
+    </ion-buttons>
+    
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+   
+    <div #mapContainer id="map"></div>
+
 </ion-content>

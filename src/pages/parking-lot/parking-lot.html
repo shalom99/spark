@@ -1,0 +1,70 @@
+<ion-header >
+  <ion-navbar color="primary">
+    <ion-title >Jadewell Pay Parking</ion-title>
+    <ion-buttons end>
+      
+              <button ion-button icon-only (click)="startListening()">
+                  <ion-icon name="mic" ></ion-icon>
+                </button>
+          </ion-buttons>
+          
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="parkinglot" fullscreen>
+    <ion-slides zoom="true" class="slides">
+        <ion-slide>
+          <div class="swiper-zoom-container">
+            <img src="assets/images/jadewell6.png">
+          </div>
+          <!-- <ion-label>Woof</ion-label> -->
+        </ion-slide>
+        <ion-slide>
+          <div class="swiper-zoom-container">
+            <img src="assets/images/jadewell2.png">
+          </div>
+       
+        </ion-slide>
+        <ion-slide>
+          <div class="swiper-zoom-container">
+            <img src="assets/images/jadewell3.png">
+          </div>
+          <!-- <ion-label>Just keep swimming</ion-label> -->
+        </ion-slide>
+        <ion-slide>
+          <div class="swiper-zoom-container">
+            <img src="assets/images/jadewell4.png">
+          </div>
+          <!-- <ion-label>Just keep swimming</ion-label> -->
+        </ion-slide>
+        <ion-slide>
+          <div class="swiper-zoom-container">
+            <img src="assets/images/jadewell5.png">
+          </div>
+          <!-- <ion-label>Just keep swimming</ion-label> -->
+        </ion-slide>
+        <ion-slide>
+          <div class="swiper-zoom-container">
+            <img src="assets/images/jadewell1.png">
+          </div>
+          <!-- <ion-label>Just keep swimming</ion-label> -->
+        </ion-slide>
+        <ion-slide>
+          <div class="swiper-zoom-container">
+            <img src="assets/images/jadewell7.png">
+          </div>
+          <!-- <ion-label>Just keep swimming</ion-label> -->
+        </ion-slide>
+      </ion-slides>
+      <ion-grid class="details">
+        <ion-row>
+          <ion-col>Capacity: 50 </ion-col>
+          <ion-col>Price: ₱35/hr</ion-col>
+        </ion-row>
+      </ion-grid>
+     <button ion-button block round outline (click)="gotoReservation()"> Reservation</button> 
+
+
+
+
+</ion-content>

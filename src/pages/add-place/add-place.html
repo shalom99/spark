@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Add Place</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Title</ion-label>
+        <ion-input type="text" name="title" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Address</ion-label>
+        <ion-textarea name="address" ngModel required></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button block outline type="button" icon-left (click)="onLocate()">
+            <ion-icon name="locate"></ion-icon>
+            Locate me
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button block outline type="button" icon-left (click)="onOpenMap()">
+            <ion-icon name="map"> </ion-icon>
+            Select on Map
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isClicked">
+        <ion-col>
+          <p>Your coordinates</p>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isClicked">
+        <ion-col>
+          <p>Lat:{{ this.PostData.lat }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isClicked">
+        <ion-col>
+          <p>Long: {{ this.PostData.long }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-item>
+            <ion-label >Price hourly 	₱:</ion-label>
+                <ion-input name="price" ngModel type="number" placeholder="" ></ion-input>
+              </ion-item>
+        </ion-row>
+        <ion-row>
+            <ion-item>
+                <ion-label >Number of slots:</ion-label>
+                    <ion-input name="slots" ngModel type="number" placeholder=""></ion-input>
+            </ion-item>
+        </ion-row>
+        
+        
+      
+      
+      
+
+      
+
+      <!-- <ion-row>
+          <ion-col text-center>
+            <h5>Take a Photo!</h5>
+          </ion-col>
+        </ion-row> -->
+      <!-- <ion-row>
+          <ion-col>
+            <button ion-button icon-left block outline type="button" (click)="onTakePhoto()">
+              <ion-icon name="camera"></ion-icon>
+              Open Camera
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <img [src]="">
+          </ion-col>
+        </ion-row> -->
+      <ion-row>
+        <ion-col>
+          <button ion-button color="secondary" block type="submit" [disabled]="!f.valid"> Add this Place</button>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

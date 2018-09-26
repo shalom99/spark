@@ -1,0 +1,18 @@
+
+
+<ion-content padding>
+    <ion-list class="list">
+      <h1 text-center>Login</h1>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" value="" [(ngModel)]="userData.username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+        </ion-item>
+        <button ion-button block round outline (click)="onSignin()">Sign-in</button>
+        <button ion-button block round outline (click)="gotoSignup()">Sign-up</button>
+      </ion-list>
+
+</ion-content>

@@ -1,0 +1,19 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Notifications</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngFor="let item of dataSet">
+        <ion-card-content>
+       <p> {{item.feed_id}}.  {{ item.feed }}</p>
+        <span>{{item.created }}</span>
+        </ion-card-content>
+     </ion-card>
+
+</ion-content>

@@ -1,3 +1,20 @@
 page-home {
+    #map{
+        height: 100%;
+        width: 100%;
+      }
 
+      #content{
+        
+        line-height: 1.35;
+        overflow: hidden !important;
+        white-space: nowrap;
+        z-index:99999;
+
+        a{
+            text-align: center;
+        }
+      }
+
+    
 }
